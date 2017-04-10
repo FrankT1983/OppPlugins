@@ -21,8 +21,6 @@ public class SobelEdge extends PlaneCalculator<Byte>
     public Byte[][] Calculate(Byte[][] data)
     {
         Byte[][] result = TemplateHelper.CreateNewWithSameSize(data);
-
-
         for (int y=0; y< data[0].length; y++)
         {
             for (int x=0; x< data.length; x++)
