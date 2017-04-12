@@ -21,9 +21,9 @@ public class SobelEdge extends PlaneCalculator<Byte>
     public Byte[][] Calculate(Byte[][] data)
     {
         Byte[][] result = TemplateHelper.CreateNewWithSameSize(data);
-        for (int y=0; y< data[0].length; y++)
+        for (int y=0; y< data.length; y++)
         {
-            for (int x=0; x< data.length; x++)
+            for (int x=0; x< data[0].length; x++)
             {
                 if (x==0 || y==0 || y==data.length-1 || x == data[0].length-1)
                 {
@@ -32,11 +32,11 @@ public class SobelEdge extends PlaneCalculator<Byte>
                 else
                 {
                     int gx = 1*data[y-1][x-1] + 0* data[y-1][x-1] + -1*data[y-1][x-1] +
-                             2*data[y+0][x-1] + 0* data[y+0][x-1] + -2*data[y+0][x-1] +
-                             1*data[y+1][x-1] + 0* data[y+1][x-1] + -1*data[y+1][x-1] ;
+                            2*data[y+0][x-1] + 0* data[y+0][x-1] + -2*data[y+0][x-1] +
+                            1*data[y+1][x-1] + 0* data[y+1][x-1] + -1*data[y+1][x-1] ;
 
                     int gy = 1*data[y-1][x-1] +  2* data[y-1][x-1] +  1*data[y-1][x-1] +
-                             0*data[y+0][x-1] +  0* data[y+0][x-1] +  0*data[y+0][x-1] +
+                            0*data[y+0][x-1] +  0* data[y+0][x-1] +  0*data[y+0][x-1] +
                             -1*data[y+1][x-1] + -2* data[y+1][x-1] + -1*data[y+1][x-1] ;
 
                     result[y][x] = (byte)Math.sqrt( gx*gx +gy*gy);
