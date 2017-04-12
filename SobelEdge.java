@@ -25,7 +25,7 @@ public class SobelEdge extends PlaneCalculator<Byte>
         {
             for (int x=0; x< data.length; x++)
             {
-                if (x==0 || y==0 || x==data.length-1 || y == data[0].length-1)
+                if (x==0 || y==0 || y==data.length-1 || x == data[0].length-1)
                 {
                     result[y][x] = 0;
                 }
